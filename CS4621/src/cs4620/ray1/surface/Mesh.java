@@ -47,7 +47,8 @@ public class Mesh extends Surface {
 		mesh = (OBJParser.parse(RayTracer.sceneWorkspace.resolve(fileName))).flatten();
 	}
 	
-	public boolean intersect(IntersectionRecord outRecord, Ray rayIn) {	return false; }
+	public boolean intersect(IntersectionRecord outRecord, Ray rayIn) {
+		return false; }
 
 	public void appendRenderableSurfaces (ArrayList<Surface> in) {
 		for (int i=0; i<mesh.indexCount/3; i++) {

@@ -3,6 +3,7 @@ package cs4620.common;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import cs4620.mesh.MeshData;
 import cs4620.mesh.gen.MeshGenOptions;
 import cs4620.mesh.gen.MeshGenerator;
 
@@ -14,6 +15,7 @@ public class Mesh extends ACUniqueObject implements IXMLDocWriteable {
 	
 	public Type type;
 	public String file;
+	public MeshData data;
 	public MeshGenerator generator;
 	public final MeshGenOptions genOptions = new MeshGenOptions();
 	
@@ -32,6 +34,10 @@ public class Mesh extends ACUniqueObject implements IXMLDocWriteable {
 		type = Type.FILE;
 		file = f;
 		generator = null;
+	}
+	public void setData(MeshData d){
+		data = d;
+		
 	}
 	public void setGenOptions(MeshGenOptions o) {
 		genOptions.divisionsLatitude = o.divisionsLatitude;
