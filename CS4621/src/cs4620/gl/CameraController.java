@@ -61,10 +61,10 @@ public class CameraController {
 		
 		boolean thisFrameButtonDown = Mouse.isButtonDown(0) && !(Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RCONTROL));
 		int thisMouseX = Mouse.getX(), thisMouseY = Mouse.getY();
-		if (thisFrameButtonDown && prevFrameButtonDown) {
+		/*if (thisFrameButtonDown && prevFrameButtonDown) {
 			rotation.add(0, -0.1f * (thisMouseX - prevMouseX), 0);
 			rotation.add(0.1f * (thisMouseY - prevMouseY), 0, 0);
-		}
+		}*/
 		prevFrameButtonDown = thisFrameButtonDown;
 		prevMouseX = thisMouseX;
 		prevMouseY = thisMouseY;
