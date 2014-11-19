@@ -138,6 +138,7 @@ public class RenderEnvironment implements IDisposable {
 		switch (m.type) {
 		case FILE:
 			// Load From OBJ
+			//System.out.println("its NOT generated!!");
 			OBJMesh om = OBJParser.parse(m.file);
 			if(om == null || !om.hasData()) return;
 			if(om.hasUVs()) {
@@ -203,7 +204,9 @@ public class RenderEnvironment implements IDisposable {
 			break;
 		case GENERATOR:
 			// Generate Mesh
+			System.out.println("its generated!!");
 			m.generator.generate(md, m.genOptions);
+			m.setData(md);
 			if(!md.hasData()) {
 				System.err.println("Mesh Conversion Error - No Output Data");
 				return;
