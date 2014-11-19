@@ -123,5 +123,6 @@ public class Triangle extends Surface {
 	 */
 	public String toString() {
 		return "Triangle ";
+	
 	}
 }

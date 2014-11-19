@@ -1,10 +1,12 @@
 package cs4620.ray1.shader;
 
 import cs4620.ray1.IntersectionRecord;
+import cs4620.ray1.Light;
 import cs4620.ray1.Ray;
 import cs4620.ray1.Scene;
 import egl.math.Color;
 import egl.math.Colord;
+import egl.math.Vector3d;
 
 /**
  * A Phong material.
@@ -45,7 +47,7 @@ public class Phong extends Shader {
 	 */
 	@Override
 	public void shade(Colord outIntensity, Scene scene, Ray ray, IntersectionRecord record) {
-		// TODO#A2: Fill in this function.
+		// TODO#A2 Fill in this function.
 		// 1) Loop through each light in the scene.
 		// 2) If the intersection point is shadowed, skip the calculation for the light.
 		//	  See Shader.java for a useful shadowing function.
@@ -53,6 +55,41 @@ public class Phong extends Shader {
 		//    the intersection point from the light's position.
 		// 4) Compute the color of the point using the Phong shading model. Add this value
 		//    to the output.
+		
+		Vector3d incoming = new Vector3d();
+		Vector3d outgoing = new Vector3d();
+		outgoing.set(ray.origin).sub(record.location).normalize();
+
+		Colord color = new Colord();
+		Ray shadowRay = new Ray();
+		
+		outIntensity.setZero();
+		for(Light light : scene.getLights()) {
+			if(!isShadowed(scene, light, record, shadowRay)) {
+				incoming.set(light.position).sub(record.location).normalize();
+				
+				double dotProd = record.normal.dot(incoming);
+				if (dotProd <= 0)
+					continue;
+				else {
+					Vector3d halfVec = new Vector3d();
+					halfVec.set(incoming).add(outgoing).normalize();
+					
+					double halfDotNormal = Math.max(0.0, halfVec.dot(record.normal));
+					double factor = Math.pow(halfDotNormal, exponent);
+					double rSq= record.location.distSq(light.position);
+					
+					color.set((texture == null) ? diffuseColor :
+						texture.getTexColor(record.texCoords))
+						 .mul(dotProd)
+						 .addMultiple(factor, specularColor)
+						 .mul(light.intensity)
+						 .div(rSq);
+					
+					outIntensity.add(color);
+				}
+			}
+		}
 		
 	}
 
