@@ -34,9 +34,60 @@ public class Sphere extends Surface {
    * @return true if the surface intersects the ray
    */
   public boolean intersect(IntersectionRecord outRecord, Ray rayIn) {
-    // TODO#A2: fill in this function.
+    // TODO#A2 fill in this function.
 	  
-    return false;
+    // Rename the common vectors so I don't have to type so much
+	Vector3d d = rayIn.direction;
+	Vector3d c = center;
+	Vector3d o = rayIn.origin;
+    
+    // Compute some factors used in computation
+    double qx = o.x - c.x;
+    double qy = o.y - c.y;
+    double qz = o.z - c.z;
+    double dd = d.lenSq();
+    double qd = qx * d.x + qy * d.y + qz * d.z;
+    double qq = qx * qx + qy * qy + qz * qz;
+    
+    // solving the quadratic equation for t at the pts of intersection
+    // dd*t^2 + (2*qd)*t + (qq-r^2) = 0
+    double discriminantsqr = (qd * qd - dd * (qq - radius * radius));
+    
+    // If the discriminant is less than zero, there is no intersection
+    if (discriminantsqr < 0) {
+      return false;
+    }
+    
+    // Otherwise check and make sure that the intersections occur on the ray (t
+    // > 0) and return the closer one
+    double discriminant = Math.sqrt(discriminantsqr);
+    double t1 = (-qd - discriminant) / dd;
+    double t2 = (-qd + discriminant) / dd;
+    double t = 0;
+    if (t1 > rayIn.start && t1 < rayIn.end) {
+      t = t1;
+    }
+    else if (t2 > rayIn.start && t2 < rayIn.end) {
+      t = t2;
+    }
+    else {
+      return false; // Neither intersection was in the ray's half line.
+    }
+    
+    // There was an intersection, fill out the intersection record
+    if (outRecord != null) {
+      outRecord.t = t;
+      rayIn.evaluate(outRecord.location, t);
+      outRecord.surface = this;
+      outRecord.normal.set(outRecord.location).sub(center).normalize();
+      double theta = Math.asin(outRecord.normal.y);
+      double phi = Math.atan2(outRecord.normal.x, outRecord.normal.z);
+      double u = (phi + Math.PI) / (2*Math.PI);
+      double v = (theta - Math.PI/2) / Math.PI;
+      outRecord.texCoords.set(u, v);
+    }
+    
+    return true;
   }
   
   /**

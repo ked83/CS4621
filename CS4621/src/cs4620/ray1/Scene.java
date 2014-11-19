@@ -92,38 +92,27 @@ public class Scene {
 	}
 	
 	private boolean intersect(IntersectionRecord outRecord, Ray rayIn, boolean anyIntersection) {
-		// TODO#A2: 1) Loop through all surfaces in the scene.
-		//		    2) Intersect each with a copy of the given ray.
-		//		    3) If there was an intersection, check the modified IntersectionRecord to see
-		//		  	   if the object was hit by the ray sooner than any previous object.
-		//			   Hint: modifying the end field of your local copy of ray might be useful here.
-		//          4) If anyIntersection is true, return immediately.
-		//		    5) Set outRecord to the IntersectionRecord of the first object hit.
-		//		    6) If there was an intersection, return true; otherwise return false.
+		// TODO#A2 1) Loop through all surfaces in the scene.
+		//		   2) Intersect each with a copy of the given ray.
+		//		   3) If there was an intersection, check the modified IntersectionRecord to see
+		//	  		  if the object was hit by the ray sooner than any previous object.
+		//			  Hint: modifying the end field of your local copy of ray might be useful here.
+		//         4) If anyIntersection is true, return immediately.
+		//		   5) Set outRecord to the IntersectionRecord of the first object hit.
+		//		   6) If there was an intersection, return true; otherwise return false.
 		
-		int firstTime = 0;
-		double end = 0;
-		for(Surface s : surfaces) {
-			IntersectionRecord inRecord = new IntersectionRecord();
-			Ray copyRay = new Ray(rayIn);
-			if(s.intersect(inRecord, copyRay)) {	
-				if(anyIntersection) {
-					outRecord.set(inRecord);
-					return true;
-				}
-				//check outRecord intersection point and compare with end of ray
-				if(firstTime == 0) {
-					outRecord.set(inRecord);
-					end = inRecord.t;
-					firstTime++;
-				} 			
-				else if(inRecord.t <= end) {
-					end = inRecord.t;
-					outRecord.set(inRecord);
-				}
+		boolean ret = false;
+		IntersectionRecord ir = new IntersectionRecord();
+		Ray ray = new Ray(rayIn);
+		for(int i = 0; i < surfaces.size(); i++) {
+			if(surfaces.get(i).intersect(ir, ray) && ir.t < ray.end ) {
+				if(anyIntersection) return true;
+				ret = true;
+				ray.end = ir.t;
+				if(outRecord != null)
+					outRecord.set(ir);
 			}
 		}
-		if(firstTime == 0) return false;
-		else return true;
+		return ret;
 	}
 }
