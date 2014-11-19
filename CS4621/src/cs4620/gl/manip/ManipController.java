@@ -121,17 +121,17 @@ public class ManipController implements IDisposable {
 		switch (type) {
 		case Manipulator.Type.TRANSLATE:
 			currentManips[Manipulator.Axis.X] = Manipulator.TranslateX;
-			currentManips[Manipulator.Axis.Y] = Manipulator.TranslateY;
+			//currentManips[Manipulator.Axis.Y] = Manipulator.TranslateY;
 			currentManips[Manipulator.Axis.Z] = Manipulator.TranslateZ;
 			break;
 		case Manipulator.Type.ROTATE:
 			currentManips[Manipulator.Axis.X] = Manipulator.RotateX;
-			currentManips[Manipulator.Axis.Y] = Manipulator.RotateY;
+			//currentManips[Manipulator.Axis.Y] = Manipulator.RotateY;
 			currentManips[Manipulator.Axis.Z] = Manipulator.RotateZ;
 			break;
 		case Manipulator.Type.SCALE:
 			currentManips[Manipulator.Axis.X] = Manipulator.ScaleX;
-			currentManips[Manipulator.Axis.Y] = Manipulator.ScaleY;
+			//currentManips[Manipulator.Axis.Y] = Manipulator.ScaleY;
 			currentManips[Manipulator.Axis.Z] = Manipulator.ScaleZ;
 			break;
 		}
@@ -166,7 +166,7 @@ public class ManipController implements IDisposable {
 			Matrix4.createRotationY((float)(Math.PI / 2.0), mManip);
 			break;
 		case Manipulator.Axis.Y:
-			Matrix4.createRotationX((float)(-Math.PI / 2.0), mManip);
+			//Matrix4.createRotationX((float)(-Math.PI / 2.0), mManip);
 			break;
 		case Manipulator.Axis.Z:
 			mManip.setIdentity();
@@ -232,7 +232,7 @@ public class ManipController implements IDisposable {
 			M = Matrix4.createRotationX(amount);
 			break;
 		case Manipulator.Axis.Y:
-			M = Matrix4.createRotationY(amount);
+			//M = Matrix4.createRotationY(amount);
 			break;
 		case Manipulator.Axis.Z:
 			M = Matrix4.createRotationZ(amount);
@@ -244,6 +244,7 @@ public class ManipController implements IDisposable {
 			object.sceneObject.transformation.mulBefore(M);
 	}
 	public void applyTranslation(int axis, Matrix4 mViewProjection, RenderObject object, Vector2 lastMousePos, Vector2 curMousePos) {
+		System.out.println("Translating");
 		Vector3 axisDirection = new Vector3();
 		Vector3 axisOrigin = new Vector3();
 		switch (axis) {
@@ -251,7 +252,7 @@ public class ManipController implements IDisposable {
 			axisDirection.set(1,0,0);
 			break;
 		case Manipulator.Axis.Y:
-			axisDirection.set(0,1,0);
+			//axisDirection.set(0,1,0);
 			break;
 		case Manipulator.Axis.Z:
 			axisDirection.set(0,0,1);
@@ -274,7 +275,7 @@ public class ManipController implements IDisposable {
 			translationAmount.set(t2-t1, 0, 0);
 			break;
 		case Manipulator.Axis.Y:
-			translationAmount.set(0, t2-t1, 0);
+			//translationAmount.set(0, t2-t1, 0);
 			break;
 		case Manipulator.Axis.Z:
 			translationAmount.set(0, 0, t2-t1);
@@ -294,7 +295,7 @@ public class ManipController implements IDisposable {
 			axisDirection.set(1,0,0);
 			break;
 		case Manipulator.Axis.Y:
-			axisDirection.set(0,1,0);
+			//axisDirection.set(0,1,0);
 			break;
 		case Manipulator.Axis.Z:
 			axisDirection.set(0,0,1);
@@ -317,7 +318,7 @@ public class ManipController implements IDisposable {
 			scaleAmount.set(t2/t1, 1, 1);
 			break;
 		case Manipulator.Axis.Y:
-			scaleAmount.set(1, t2/t1, 1);
+			//scaleAmount.set(1, t2/t1, 1);
 			break;
 		case Manipulator.Axis.Z:
 			scaleAmount.set(1, 1, t2/t1);
@@ -331,8 +332,11 @@ public class ManipController implements IDisposable {
 	}
 	
 	static float getAxisT(Vector3 axisOrigin, Vector3 axisDirection, Matrix4 mVP, Vector2 mousePos) {
-		Vector3 p1 = new Vector3(mousePos.x, mousePos.y, -1);
+		/*Vector3 p1 = new Vector3(mousePos.x, mousePos.y, -1);
 		Vector3 p2 = new Vector3(mousePos.x, mousePos.y, 1);
+		*/
+		Vector3 p1 = new Vector3(mousePos.x, 0, -1);
+		Vector3 p2 = new Vector3(mousePos.x, 0, 1);
 		Matrix4 mVPI = mVP.clone().invert();
 		mVPI.mulPos(p1);
 		mVPI.mulPos(p2);

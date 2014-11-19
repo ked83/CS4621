@@ -60,7 +60,7 @@ public class ViewScreen extends GameScreen {
 	TimelineViewer animTimeViewer = new TimelineViewer();
 	//start kelsey
 	File earthFile = new File("data/scenes/Earth.xml"); 
-
+	File ourScene = new File("data/scenes/scene1.xml");
 	private void loadFile() {
 		String file = earthFile.getAbsolutePath();
 		Parser p = new Parser();

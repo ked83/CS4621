@@ -18,6 +18,8 @@ public class CameraController {
 	
 	protected boolean orbitMode = false;
 	
+	private float rotationX = 0;
+	
 	public CameraController(Scene s, RenderEnvironment re, RenderCamera c) {
 		scene = s;
 		rEnv = re;
@@ -36,6 +38,7 @@ public class CameraController {
 	 * @param et  time elapsed since previous frame
 	 */
 	public void update(double et) {
+
 		Vector3 motion = new Vector3();
 		Vector3 rotation = new Vector3();
 		
@@ -43,17 +46,17 @@ public class CameraController {
 		if(Keyboard.isKeyDown(Keyboard.KEY_S)) { motion.add(0, 0, 1); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_A)) { motion.add(-1, 0, 0); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_D)) { motion.add(1, 0, 0); }
-		if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) { motion.add(0, -1, 0); }
-		if(Keyboard.isKeyDown(Keyboard.KEY_SPACE)) { motion.add(0, 1, 0); }
+		//if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) { motion.add(0, -1, 0); }
+		//if(Keyboard.isKeyDown(Keyboard.KEY_SPACE)) { motion.add(0, 1, 0); }
 
-		if(Keyboard.isKeyDown(Keyboard.KEY_E)) { rotation.add(0, 0, -1); }
-		if(Keyboard.isKeyDown(Keyboard.KEY_Q)) { rotation.add(0, 0, 1); }
+		//if(Keyboard.isKeyDown(Keyboard.KEY_E)) { rotation.add(0, 0, -1); }
+		//if(Keyboard.isKeyDown(Keyboard.KEY_Q)) { rotation.add(0, 0, 1); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_DOWN)) { rotation.add(-1, 0, 0); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_UP)) { rotation.add(1, 0, 0); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) { rotation.add(0, -1, 0); }
 		if(Keyboard.isKeyDown(Keyboard.KEY_LEFT)) { rotation.add(0, 1, 0); }
 		
-		if(Keyboard.isKeyDown(Keyboard.KEY_O)) { orbitMode = true; } 
+		//if(Keyboard.isKeyDown(Keyboard.KEY_O)) { orbitMode = true; } 
 		if(Keyboard.isKeyDown(Keyboard.KEY_F)) { orbitMode = false; } 
 		
 		boolean thisFrameButtonDown = Mouse.isButtonDown(0) && !(Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RCONTROL));
@@ -95,6 +98,11 @@ public class CameraController {
 	protected void rotate(Matrix4 parentWorld, Matrix4 transformation, Vector3 rotation) {
 		// TODO#A3 SOLUTION START
 		
+		if((rotationX > 45 && rotation.x > 0) || (rotationX < -45 && rotation.x < 0)) {
+			rotation.x = 0;
+		}
+		rotationX += rotation.x;
+		
 		rotation = rotation.clone().mul((float)(Math.PI / 180.0));
 		Matrix4 mRot = Matrix4.createRotationX(rotation.x);
 		mRot.mulAfter(Matrix4.createRotationY(rotation.y));
@@ -109,6 +117,7 @@ public class CameraController {
 		}
 		transformation.mulBefore(mRot);
 		
+		System.out.println(rotation.x);
 		// SOLUTION END
 	}
 	
@@ -124,7 +133,7 @@ public class CameraController {
 		// TODO#A3 SOLUTION START
 
 		Matrix4 mTrans = Matrix4.createTranslation(motion);
-		
+
 		transformation.mulBefore(mTrans);
 		
 		// SOLUTION END
