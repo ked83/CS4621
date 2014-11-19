@@ -1,12 +1,22 @@
 package cs4620.gl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
+import cs4620.ray1.IntersectionRecord;
+import cs4620.ray1.Ray;
+import cs4620.ray1.surface.Mesh;
 import cs4620.common.Scene;
+import cs4620.common.UniqueContainer;
 import cs4620.common.event.SceneTransformationEvent;
+import cs4620.mesh.MeshData;
 import egl.math.Matrix4;
 import egl.math.Vector3;
+import egl.math.Vector3d;
+import egl.math.Vector4;
 
 public class CameraController {
 	protected final Scene scene;
@@ -19,11 +29,47 @@ public class CameraController {
 	protected boolean orbitMode = false;
 	
 	private float rotationX = 0;
+	private List<Mesh> meshes;
+	private float nearZPos;
 	
 	public CameraController(Scene s, RenderEnvironment re, RenderCamera c) {
 		scene = s;
 		rEnv = re;
 		camera = c;
+		meshes = new ArrayList<Mesh>();
+		for(cs4620.common.Mesh m : scene.meshes) {
+			MeshData md = new MeshData();
+			Mesh me = new Mesh(md);
+			//System.out.println(m.file);
+			if(!(m.file == null)) {
+				//me.setData(m.file);
+				meshes.add(me);
+			}
+		}
+		
+		nearZPos = (float) - 0.02;
+	}
+	
+	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) {
+		//System.out.println("pickUpObject called");
+		Vector4 mousePos = new Vector4(prevMouseX, prevMouseY, nearZPos, 1);
+		Vector4 v4 = pMat.clone().mulBefore(camTransf).clone().mul(mousePos);
+		Vector4 origin = new Vector4(0, 0, 0, 1);
+		Vector4 o4 = pMat.clone().mulBefore(camTransf).clone().mul(origin);
+		Vector3d v = new Vector3d(v4.x, v4.y, v4.z);
+		Vector3d o = new Vector3d(o4.x, o4.y, o4.z);
+		Ray rayIn = new Ray(o, v.clone().sub(o));
+		//System.out.println(v);
+		IntersectionRecord outRecord = new IntersectionRecord();
+		cs4620.ray1.Scene s = new cs4620.ray1.Scene();
+		for(Mesh m : meshes) {
+			s.addSurface(m);
+		}
+		//System.out.println(s.getSurfaces().size());
+		if(s.getFirstIntersection(outRecord, rayIn)) {
+			System.out.println("intersected!");
+			//delete object
+		}
 	}
 	
 	/**
@@ -69,8 +115,12 @@ public class CameraController {
 		prevMouseX = thisMouseX;
 		prevMouseY = thisMouseY;
 		
+		
+		
+		
 		RenderObject parent = rEnv.findObject(scene.objects.get(camera.sceneObject.parent));
 		Matrix4 pMat = parent == null ? new Matrix4() : parent.mWorldTransform;
+		pickUpObject(pMat, camera.sceneObject.transformation);
 		if(motion.lenSq() > 0.01) {
 			motion.normalize();
 			motion.mul(5 * (float)et);
