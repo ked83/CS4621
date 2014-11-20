@@ -30,6 +30,10 @@ public class Triangle extends Surface {
 		Vector3d v1 = owner.getPosition(index.y);
 		Vector3d v2 = owner.getPosition(index.z);
 
+		
+		System.out.println(v0);
+		System.out.println(v1);
+		System.out.println(v2);
 		if (!owner.hasNormals()) {
 			Vector3d e0 = new Vector3d(), e1 = new Vector3d();
 			e0.set(v1).sub(v0);
@@ -62,7 +66,6 @@ public class Triangle extends Surface {
 		// TODO#A2: fill in this function.
 
 		Vector3d v0 = owner.getPosition(index.x);
-
 
 		double g = rayIn.direction.x;
 		double h = rayIn.direction.y;
