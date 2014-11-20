@@ -31,9 +31,7 @@ public class Triangle extends Surface {
 		Vector3d v2 = owner.getPosition(index.z);
 
 		
-		System.out.println(v0);
-		System.out.println(v1);
-		System.out.println(v2);
+
 		if (!owner.hasNormals()) {
 			Vector3d e0 = new Vector3d(), e1 = new Vector3d();
 			e0.set(v1).sub(v0);
@@ -48,6 +46,9 @@ public class Triangle extends Surface {
 		d = v0.x-v2.x;
 		e = v0.y-v2.y;
 		f = v0.z-v2.z;
+		System.out.println(d);
+		System.out.println(e);
+		System.out.println(f);
 
 		this.setShader(shader);
 	}
