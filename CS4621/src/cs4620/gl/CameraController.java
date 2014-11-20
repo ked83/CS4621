@@ -16,6 +16,7 @@ import cs4620.common.UniqueContainer;
 import cs4620.common.event.SceneTransformationEvent;
 import cs4620.mesh.MeshData;
 import egl.math.Matrix4;
+import egl.math.Vector2;
 import egl.math.Vector3;
 import egl.math.Vector3d;
 import egl.math.Vector4;
@@ -61,17 +62,18 @@ public class CameraController {
 	}
 
 	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) {
+		Vector2 curMousePos = new Vector2(prevMouseX, prevMouseY).add(0.5f).mul(2).div(camera.viewportSize.x, camera.viewportSize.y).sub(1);
+		System.out.println(curMousePos);
 		//System.out.println("pickUpObject called");
-		Vector4 mousePos = new Vector4(prevMouseX, prevMouseY, nearZPos, 1);
-		Vector4 v4 = pMat.clone().mulBefore(camTransf).clone().mul(mousePos);
-		Vector4 origin = new Vector4(0, 0, 0, 1);
-		Vector4 o4 = pMat.clone().mulBefore(camTransf).clone().mul(origin);
+		Vector4 v4 = new Vector4(curMousePos.x, curMousePos.y, nearZPos, 1);
+	//	Vector4 v4 = pMat.clone().mulBefore(camTransf).clone().mul(mousePos);
+	//	Vector4 origin = new Vector4(0, 0, 0, 1);
+	//	Vector4 o4 = pMat.clone().mulBefore(camTransf).clone().mul(origin);
 		Vector3d v = new Vector3d(v4.x, v4.y, v4.z);
-		Vector3d o = new Vector3d(o4.x, o4.y, o4.z);
-		Ray rayIn = new Ray(o, v.clone().sub(o));
+		Vector3d o = new Vector3d(0,0,0);
+		Ray rayIn = new Ray(o, v);
 		//System.out.println(v);
 		IntersectionRecord outRecord = new IntersectionRecord();
-		cs4620.ray1.Scene s = new cs4620.ray1.Scene();
 		boolean anyIntersection = true;
 		int firstTime = 0;
 		double end = 0;
@@ -82,7 +84,6 @@ public class CameraController {
 				IntersectionRecord inRecord = new IntersectionRecord();
 				Ray copyRay = new Ray(rayIn);
 				if(surf.intersect(inRecord, copyRay)) {
-				//	System.out.println("INTERSECT!");
 					if(anyIntersection) {
 						outRecord.set(inRecord);
 								}
@@ -142,8 +143,10 @@ public void update(double et) {
 			rotation.add(0.1f * (thisMouseY - prevMouseY), 0, 0);
 		}*/
 	prevFrameButtonDown = thisFrameButtonDown;
+	
 	prevMouseX = thisMouseX;
 	prevMouseY = thisMouseY;
+
 	//System.out.println(prevMouseX);
 	//System.out.println(prevMouseY);
 
@@ -220,4 +223,8 @@ protected void translate(Matrix4 parentWorld, Matrix4 transformation, Vector3 mo
 
 	// SOLUTION END
 }
+
+
+
+
 }
