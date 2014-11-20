@@ -25,6 +25,7 @@ public class CameraController {
 	protected final Scene scene;
 	public RenderCamera camera;
 	protected final RenderEnvironment rEnv;
+	
 
 	protected boolean prevFrameButtonDown = false;
 	protected int prevMouseX, prevMouseY;
@@ -32,7 +33,8 @@ public class CameraController {
 	protected boolean orbitMode = false;
 
 	private float rotationX = 0;
-	private List<Mesh> meshes;
+	private ArrayList<Mesh> meshes;
+	private ArrayList<String> names;
 	private float nearZPos;
 
 	public CameraController(Scene s, RenderEnvironment re, RenderCamera c) {
@@ -40,6 +42,10 @@ public class CameraController {
 		rEnv = re;
 		camera = c;
 		meshes = new ArrayList<Mesh>();
+		names = new ArrayList<String>();
+		for(String i :scene.meshes.getNames()){
+			names.add(i);
+		}
 		for(cs4620.common.Mesh m : scene.meshes) {
 			MeshData md = new MeshData();
 			if(m.type == cs4620.common.Mesh.Type.GENERATOR){
@@ -56,34 +62,39 @@ public class CameraController {
 				}
 
 			}
-		}
+		
 
+		}
 		nearZPos = (float) - 0.02;
 	}
 
 	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) {
 		Vector2 curMousePos = new Vector2(prevMouseX, prevMouseY).add(0.5f).mul(2).div(camera.viewportSize.x, camera.viewportSize.y).sub(1);
-		System.out.println(curMousePos);
 		//System.out.println("pickUpObject called");
 		Vector4 v4 = new Vector4(curMousePos.x, curMousePos.y, nearZPos, 1);
 	//	Vector4 v4 = pMat.clone().mulBefore(camTransf).clone().mul(mousePos);
 	//	Vector4 origin = new Vector4(0, 0, 0, 1);
 	//	Vector4 o4 = pMat.clone().mulBefore(camTransf).clone().mul(origin);
-		Vector3d v = new Vector3d(v4.x, v4.y, v4.z);
-		Vector3d o = new Vector3d(0,0,0);
+		Vector3d o = new Vector3d(v4.x, v4.y, 1);
+		Vector3d v = new Vector3d(0,0,1);
 		Ray rayIn = new Ray(o, v);
+		rayIn.end = -1;
+		rayIn.start = 1; //Check?
 		//System.out.println(v);
 		IntersectionRecord outRecord = new IntersectionRecord();
 		boolean anyIntersection = true;
 		int firstTime = 0;
 		double end = 0;
 		for(Mesh m : meshes) {
+			
 			ArrayList<Surface> list = new ArrayList<Surface>();
 			m.appendRenderableSurfaces(list);
 			for(Surface surf : list) {
 				IntersectionRecord inRecord = new IntersectionRecord();
 				Ray copyRay = new Ray(rayIn);
 				if(surf.intersect(inRecord, copyRay)) {
+					System.out.println("Intersection");
+					scene.removeMesh(names.get(meshes.indexOf(m))); //This is not foolproof
 					if(anyIntersection) {
 						outRecord.set(inRecord);
 								}

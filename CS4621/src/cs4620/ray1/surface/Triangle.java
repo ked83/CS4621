@@ -91,7 +91,6 @@ public class Triangle extends Surface {
 		// There was an intersection, fill out the intersection record
 		
 		if (outRecord != null) {
-			System.out.println("not null");
 			outRecord.t = t;
 			rayIn.evaluate(outRecord.location, t);
 			outRecord.surface = this;
