@@ -63,6 +63,7 @@ public class Triangle extends Surface {
 
 		Vector3d v0 = owner.getPosition(index.x);
 
+
 		double g = rayIn.direction.x;
 		double h = rayIn.direction.y;
 		double i = rayIn.direction.z;
@@ -70,7 +71,7 @@ public class Triangle extends Surface {
 		double k = v0.y - rayIn.origin.y;
 		double l = v0.z - rayIn.origin.z;
 		double M = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
-
+		//System.out.println(M);
 		double ei_hf = e*i-h*f;
 		double gf_di = g*f-d*i;
 		double dh_eg = d*h-e*g;
@@ -79,22 +80,24 @@ public class Triangle extends Surface {
 		double bl_kc = b*l-k*c;
 
 		double t = -(f*(ak_jb) + e*(jc_al) + d*(bl_kc))/M;
+		if(M==0) t =-(f*(ak_jb) + e*(jc_al) + d*(bl_kc));
 		if(t > rayIn.end || t < rayIn.start) return false;
 
 		double beta = (j*(ei_hf) + k*(gf_di) + l*(dh_eg))/M;
+		if(M == 0) beta = (j*(ei_hf) + k*(gf_di) + l*(dh_eg));
+		
 		if(beta < 0 || beta > 1) return false;
-
+		
 		double gamma = (i*(ak_jb) + h*(jc_al) + g*(bl_kc))/M;
+//		if(M==0) return false;//gamma = (i*(ak_jb) + h*(jc_al) + g*(bl_kc));
 		if(gamma < 0 || gamma + beta > 1) return false;
 
 
 		// There was an intersection, fill out the intersection record
-		
 		if (outRecord != null) {
 			outRecord.t = t;
 			rayIn.evaluate(outRecord.location, t);
 			outRecord.surface = this;
-
 			if (norm != null) {
 				outRecord.normal.set(norm);
 			} else {        

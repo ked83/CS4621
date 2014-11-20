@@ -70,16 +70,12 @@ public class CameraController {
 
 	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) {
 		Vector2 curMousePos = new Vector2(prevMouseX, prevMouseY).add(0.5f).mul(2).div(camera.viewportSize.x, camera.viewportSize.y).sub(1);
-		//System.out.println("pickUpObject called");
 		Vector4 v4 = new Vector4(curMousePos.x, curMousePos.y, nearZPos, 1);
-	//	Vector4 v4 = pMat.clone().mulBefore(camTransf).clone().mul(mousePos);
-	//	Vector4 origin = new Vector4(0, 0, 0, 1);
-	//	Vector4 o4 = pMat.clone().mulBefore(camTransf).clone().mul(origin);
 		Vector3d o = new Vector3d(v4.x, v4.y, 1);
 		Vector3d v = new Vector3d(0,0,1);
 		Ray rayIn = new Ray(o, v);
-		rayIn.end = -1;
-		rayIn.start = 1; //Check?
+		rayIn.end = 2;
+		rayIn.start = 0; //Check?
 		//System.out.println(v);
 		IntersectionRecord outRecord = new IntersectionRecord();
 		boolean anyIntersection = true;
@@ -93,7 +89,7 @@ public class CameraController {
 				IntersectionRecord inRecord = new IntersectionRecord();
 				Ray copyRay = new Ray(rayIn);
 				if(surf.intersect(inRecord, copyRay)) {
-					System.out.println("Intersection");
+					//System.out.println("Intersection");
 					scene.removeMesh(names.get(meshes.indexOf(m))); //This is not foolproof
 					if(anyIntersection) {
 						outRecord.set(inRecord);
