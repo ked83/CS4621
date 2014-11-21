@@ -46,9 +46,8 @@ public class Triangle extends Surface {
 		d = v0.x-v2.x;
 		e = v0.y-v2.y;
 		f = v0.z-v2.z;
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
+
+
 
 		this.setShader(shader);
 	}
@@ -65,7 +64,6 @@ public class Triangle extends Surface {
 	 */
 	public boolean intersect(IntersectionRecord outRecord, Ray rayIn) {
 		// TODO#A2: fill in this function.
-
 		Vector3d v0 = owner.getPosition(index.x);
 
 		double g = rayIn.direction.x;
@@ -93,7 +91,7 @@ public class Triangle extends Surface {
 		if(beta < 0 || beta > 1) return false;
 		
 		double gamma = (i*(ak_jb) + h*(jc_al) + g*(bl_kc))/M;
-//		if(M==0) return false;//gamma = (i*(ak_jb) + h*(jc_al) + g*(bl_kc));
+		if(M==0) return false;//gamma = (i*(ak_jb) + h*(jc_al) + g*(bl_kc));
 		if(gamma < 0 || gamma + beta > 1) return false;
 
 
@@ -101,6 +99,7 @@ public class Triangle extends Surface {
 		if (outRecord != null) {
 			outRecord.t = t;
 			rayIn.evaluate(outRecord.location, t);
+			
 			outRecord.surface = this;
 			if (norm != null) {
 				outRecord.normal.set(norm);

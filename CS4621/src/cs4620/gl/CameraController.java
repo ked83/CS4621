@@ -68,41 +68,26 @@ public class CameraController {
 		nearZPos = (float) - 0.02;
 	}
 
-	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) {
-		Vector2 curMousePos = new Vector2(prevMouseX, prevMouseY).add(0.5f).mul(2).div(camera.viewportSize.x, camera.viewportSize.y).sub(1);
+	private void pickUpObject(Matrix4 pMat, Matrix4 camTransf) { //Fix Scaling
+		Vector2 curMousePos = new Vector2(prevMouseX, prevMouseY).add(0.5f).mul(3).div(camera.viewportSize.x, camera.viewportSize.y).sub(1);
 		Vector4 v4 = new Vector4(curMousePos.x, curMousePos.y, nearZPos, 1);
 		Vector3d o = new Vector3d(v4.x, v4.y, 1);
-		Vector3d v = new Vector3d(0,0,1);
+		Vector3d v = new Vector3d(0,0,-1);
 		Ray rayIn = new Ray(o, v);
 		rayIn.end = 2;
 		rayIn.start = 0; //Check?
 		//System.out.println(v);
-		IntersectionRecord outRecord = new IntersectionRecord();
-		boolean anyIntersection = true;
-		int firstTime = 0;
-		double end = 0;
 		for(Mesh m : meshes) {
-			
 			ArrayList<Surface> list = new ArrayList<Surface>();
 			m.appendRenderableSurfaces(list);
 			for(Surface surf : list) {
 				IntersectionRecord inRecord = new IntersectionRecord();
 				Ray copyRay = new Ray(rayIn);
 				if(surf.intersect(inRecord, copyRay)) {
-					//System.out.println("Intersection");
-					scene.removeMesh(names.get(meshes.indexOf(m))); //This is not foolproof
-					if(anyIntersection) {
-						outRecord.set(inRecord);
-								}
-					//check outRecord intersection point and compare with end of ray
-					if(firstTime == 0) {
-						outRecord.set(inRecord);
-						end = inRecord.t;
-						firstTime++;
-					} 			
-					else if(inRecord.t <= end) {
-						end = inRecord.t;
-						outRecord.set(inRecord);
+					if(names.get(meshes.indexOf(m)) == "Sphere"){ //Change this to the name of the removable objects
+						scene.removeMesh(names.get(meshes.indexOf(m))); //This is not foolproof
+						System.out.println(inRecord.location);
+						System.out.println(curMousePos);
 					}
 				}
 			
