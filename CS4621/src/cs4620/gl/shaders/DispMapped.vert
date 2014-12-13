@@ -18,6 +18,20 @@ attribute vec2 vUV; // Sem (TEXCOORD 0)
 // Shading Information
 uniform float dispMagnitude;
 
+varying vec2 fUV;
+varying vec3 fN;
+varying vec4 worldPos;
+
 void main() {
-	// TODO A4: Implement displacement mapping vertex shader
+	vec4 h = getNormalColor(vUV);
+	vec3 ho =  vec3(h.x, h.y, h.z);
+	float mag = (ho.x + ho.y + ho.z)/3;
+	vec4 newPos = vPosition + vec4((mag * dispMagnitude) * vNormal, 0.0);
+	
+	worldPos = mWorld * newPos;
+
+	gl_Position = mViewProjection * worldPos;
+
+	fN = normalize((mWorldIT * vNormal).xyz);
+	fUV = vUV;
 }

@@ -5,9 +5,6 @@
 // vec4 getNormalColor(vec2 uv)
 // vec4 getSpecularColor(vec2 uv)
 
-// RenderObject Input
-uniform mat3 mWorldIT;
-
 // Lighting Information
 const int MAX_LIGHTS = 16;
 uniform int numLights;
@@ -23,23 +20,12 @@ uniform float exposure;
 uniform float shininess;
 
 varying vec2 fUV;
-varying vec4 worldPos; // vertex position in world coordinates
-varying mat3 mTBN;
+varying vec4 worldPos;
 
 void main() {
-	mat3 tbn = mat3(
-		normalize(mTBN[0]),
-		normalize(mTBN[1]),
-		normalize(mTBN[2])
-		);
-
-	// Read the normal vector from the normal map
-	vec3 normFromMap = normalize(getNormalColor(fUV).xyz * 2.0 - vec3(1.0));
-	vec3 N = normalize(mTBN * normFromMap);
-	//gl_FragColor = vec4((N + vec3(1.0))*0.5, 1.0);
-	//return;
-
-	// interpolating vectors will change the length of the view vector, so we should renormalize.
+    vec4 C = getNormalColor(fUV);
+    vec3 N = normalize(vec3(C.x, C.y, C.z));
+    
 	vec3 V = normalize(worldCam - worldPos.xyz);
 	
 	vec4 finalColor = vec4(0.0, 0.0, 0.0, 0.0);
@@ -51,16 +37,18 @@ void main() {
 
 	  // calculate diffuse term
 	  vec4 Idiff = getDiffuseColor(fUV) * max(dot(N, L), 0.0);
+	  Idiff = clamp(Idiff, 0.0, 1.0);
 
 	  // calculate specular term
 	  vec4 Ispec = getSpecularColor(fUV) * pow(max(dot(N, H), 0.0), shininess);
+	  Ispec = clamp(Ispec, 0.0, 1.0);
+	  
+	  // calculate ambient term
+	  vec4 Iamb = getDiffuseColor(fUV);
+	  Iamb = clamp(Iamb, 0.0, 1.0);
 
-	  finalColor += vec4(lightIntensity[i], 0.0) * (Idiff + Ispec) / (r*r);
+	  finalColor += vec4(lightIntensity[i], 0.0) * (Idiff + Ispec) / (r*r) + vec4(ambientLightIntensity, 0.0) * Iamb;
 	}
-    
-	// calculate ambient term
-	vec4 Iamb = getDiffuseColor(fUV);
-		
-    gl_FragColor = (finalColor + vec4(ambientLightIntensity, 0.0) * Iamb) * exposure;
-    //gl_FragColor = vec4(tbn[1], 1.0);
+
+	gl_FragColor = finalColor * exposure;
 }

@@ -12,7 +12,16 @@ uniform int numLights;
 uniform vec3 lightIntensity[MAX_LIGHTS];
 uniform vec3 lightPosition[MAX_LIGHTS];
 
+// Camera Information
+uniform vec3 worldCam;
+uniform float exposure;
+
+varying vec3 fN;
+varying vec4 worldPos;
+
 void main() {
-	// TODO A4: Implement reflection mapping fragment shader
-	gl_FragColor = vec4(1.0); 
+	vec3 N = normalize(fN);
+	vec3 V = normalize(worldPos.xyz - worldCam);
+	
+	gl_FragColor = getEnvironmentColor(V-2*dot(V, N)*N) * exposure; 
 }

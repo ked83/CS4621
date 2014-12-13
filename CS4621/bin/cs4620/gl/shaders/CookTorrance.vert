@@ -15,6 +15,15 @@ attribute vec4 vPosition; // Sem (POSITION 0)
 attribute vec3 vNormal; // Sem (NORMAL 0)
 attribute vec2 vUV; // Sem (TEXCOORD 0)
 
+varying vec2 fUV;
+varying vec3 fN;
+varying vec4 worldPos;
+
 void main() {
-	// TODO A4: Implement Cook-Torrance vertex shader
+    worldPos = mWorld * vPosition;
+
+	gl_Position = mViewProjection * worldPos;
+	
+	fN = normalize((mWorldIT * vNormal).xyz);
+	fUV = vUV;
 }

@@ -193,6 +193,10 @@ protected void rotate(Matrix4 parentWorld, Matrix4 transformation, Vector3 rotat
 		mRot.mulAfter(Matrix4.createTranslation(rotCenter));
 	}
 	transformation.mulBefore(mRot);
+	//FOR TORCH
+	if (camera.sceneCamera.torch != null) {
+		camera.sceneCamera.torch.transformation.mulBefore(mRot);
+	}
 
 	System.out.println(rotation.x);
 	// SOLUTION END
@@ -212,6 +216,10 @@ protected void translate(Matrix4 parentWorld, Matrix4 transformation, Vector3 mo
 	Matrix4 mTrans = Matrix4.createTranslation(motion);
 
 	transformation.mulBefore(mTrans);
+	//FOR TORCH
+	if (camera.sceneCamera.torch != null) {
+		camera.sceneCamera.torch.transformation.mulBefore(mTrans);
+	}
 
 	// SOLUTION END
 }

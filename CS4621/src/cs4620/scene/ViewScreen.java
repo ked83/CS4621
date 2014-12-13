@@ -2,6 +2,9 @@ package cs4620.scene;
 
 import java.awt.FileDialog;
 import java.io.File;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -30,7 +33,16 @@ import cs4620.scene.form.RPMaterialData;
 import cs4620.scene.form.RPMeshData;
 import cs4620.scene.form.RPTextureData;
 import cs4620.scene.form.ScenePanel;
+import egl.GL.BufferTarget;
+import egl.GL.BufferUsageHint;
+import egl.GL.PixelFormat;
+import egl.GL.PixelType;
+import egl.GL.TextureUnit;
+import egl.GLBuffer;
 import egl.GLError;
+import egl.GLProgram;
+import egl.GLRenderTarget;
+import egl.NativeMem;
 import egl.math.Vector2;
 import egl.math.Vector3;
 import ext.csharp.ACEventFunc;
@@ -44,6 +56,12 @@ public class ViewScreen extends GameScreen {
 	boolean wasPickPressedLast = false;
 	boolean showGrid = true;
 	boolean useTimelineMouseOver = true;
+	//start Pablo
+	GLRenderTarget rt = new GLRenderTarget(false);
+	GLProgram soProgram;
+	GLBuffer vbQuad;
+	GLBuffer ibQuad;
+	//end Pablo
 	
 	SceneApp app;
 	ScenePanel sceneTree;
@@ -171,6 +189,37 @@ public class ViewScreen extends GameScreen {
 	@Override
 	public void onEntry(GameTime gameTime) {
 		cameraIndex = 0;
+		/*
+		//start Pablo
+		rt.init();
+		ByteBuffer bb = null;
+		rt.setImage(game.getWidth(), game.getHeight(), PixelFormat.Rgba, PixelType.UnsignedByte, bb, false);
+		rt.buildRenderTarget();
+		soProgram = new GLProgram();
+		//fill in
+		soProgram.quickCreateResource("Sobel", vsRes, fsRes, null);
+		
+		//initialize vertex buffer
+		//(-1,1)---(1,1)
+		//   |       |
+		//   |       |
+		//(-1,-1)--(1,-1)
+		vbQuad = new GLBuffer(BufferTarget.ArrayBuffer, BufferUsageHint.StaticDraw, true);
+		FloatBuffer vbFloatBuff = NativeMem.createFloatBuffer(8);
+		vbFloatBuff.put(new float[] {-1,1,1,1,1,-1,-1,-1});
+		vbFloatBuff.flip();
+		vbQuad.setAsVertexVec2();
+		vbQuad.setDataInitial(vbFloatBuff);
+		
+		//initialize index buffer
+		ibQuad = new GLBuffer(BufferTarget.ElementArrayBuffer, BufferUsageHint.StaticDraw, true);
+		IntBuffer ibIntBuff = NativeMem.createIntBuffer(6);
+		ibIntBuff.put(new int[] {0,3,2,0,2,1});
+		ibIntBuff.flip();
+		ibQuad.setAsIndexInt();
+		ibQuad.setDataInitial(ibIntBuff);
+		//end Pablo
+		 */
 		
 		rController = new RenderController(app.scene, new Vector2(app.getWidth(), app.getHeight()));
 		renderer.buildPasses(rController.env.root);
@@ -268,6 +317,8 @@ public class ViewScreen extends GameScreen {
 			manipController.checkPicking(renderer, camController.camera, Mouse.getX(), Mouse.getY());
 		}
 		
+		rt.useTarget();
+		
 		Vector3 bg = app.scene.background;
 		GL11.glClearColor(bg.x, bg.y, bg.z, 0);
 		GL11.glClearDepth(1.0);
@@ -288,5 +339,23 @@ public class ViewScreen extends GameScreen {
 				Mouse.getY() < 40 || !useTimelineMouseOver, (float)gameTime.elapsed);
 		
         GLError.get("draw");
+        
+        GLRenderTarget.unuseTarget();
+        GL11.glViewport(0, 0, game.getWidth(), game.getHeight());
+        
+        
+        /*
+        //start Pablo
+        soProgram.use();
+        rt.use(TextureUnit.Texture0, soProgram.getUniform("unTexColor"));
+        rt.useDepth(TextureUnit.Texture1, soProgram.getUniform("unTexDepth"));
+        
+        vbQuad.useAsAttrib(soProgram.getAttribute("vPosition"));
+        ibQuad.bind();
+        
+        GL11.glDrawElements(GL11.GL_TRIANGLES, 0, 6, 0);
+        ibQuad.unbind();
+        //end Pablo
+         */
 	}
 }
