@@ -1,0 +1,72 @@
+# exported by CopperCube
+
+newmtl mat0
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/_metal_corrogated_shiny_7.jpg
+
+newmtl mat1
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat2
+Ka 0.000000 0.000000 0.000000
+Kd 0.411765 0.411765 0.411765
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat3
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/_metal_corrogated_shiny_9.jpg
+
+newmtl mat4
+Ka 0.000000 0.000000 0.000000
+Kd 0.592157 0.337255 0.164706
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat5
+Ka 0.000000 0.000000 0.000000
+Kd 0.501961 0.501961 0.501961
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat6
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/jabota.jpg
+
+newmtl mat7
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/_6.jpg
+
+newmtl mat8
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/purple_heart.jpg
+
+newmtl mat9
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/group_1/brick_rough_dark.jpg
+

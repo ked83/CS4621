@@ -11,8 +11,6 @@ public class SceneCamera extends SceneObject {
 	public boolean isPerspective = true;
 	public float exposure = 2.0f;
 	
-	public SceneLight torch;
-	
 	public void setZPlanes(Vector2d v) {
 		zPlanes.set(v);
 	}
@@ -26,10 +24,6 @@ public class SceneCamera extends SceneObject {
 	}
 	public void setExposure(float exposure) {
 		this.exposure = exposure;
-	}
-	
-	public void setTorch(SceneLight t) {
-		torch = t;
 	}
 	
 	@Override

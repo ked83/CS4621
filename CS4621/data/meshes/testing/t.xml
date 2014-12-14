@@ -1,0 +1,375 @@
+
+    <texture>
+       <name>piano__1</name>
+       <data>
+           <file>data/meshes/testing/burl_1_both.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__1.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__1.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__1</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__1</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__1</name>
+       <data>
+           <mesh>piano__1.obj</mesh>
+           <material>piano__1</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__2</name>
+       <data>
+           <file>data/meshes/testing/elm_1_hor.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__2.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__2.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__2</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__2</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__2</name>
+       <data>
+           <mesh>piano__2.obj</mesh>
+           <material>piano__2</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__3</name>
+       <data>
+           <file>data/meshes/testing/default_white.png</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__3.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__3.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__3</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__3</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__3</name>
+       <data>
+           <mesh>piano__3.obj</mesh>
+           <material>piano__3</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__4</name>
+       <data>
+           <file>data/meshes/testing/keys.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__4.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__4.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__4</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__4</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__4</name>
+       <data>
+           <mesh>piano__4.obj</mesh>
+           <material>piano__4</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__5</name>
+       <data>
+           <file>data/meshes/testing/elm_1_hor.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__5.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__5.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__5</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__5</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__5</name>
+       <data>
+           <mesh>piano__5.obj</mesh>
+           <material>piano__5</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__6</name>
+       <data>
+           <file>data/meshes/testing/burl_1_both.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__6.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__6.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__6</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__6</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__6</name>
+       <data>
+           <mesh>piano__6.obj</mesh>
+           <material>piano__6</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__7</name>
+       <data>
+           <file>data/meshes/testing/metal_rusted.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__7.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__7.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__7</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__7</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__7</name>
+       <data>
+           <mesh>piano__7.obj</mesh>
+           <material>piano__7</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__8</name>
+       <data>
+           <file>data/meshes/testing/elm_1_hor.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__8.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__8.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__8</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__8</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__8</name>
+       <data>
+           <mesh>piano__8.obj</mesh>
+           <material>piano__8</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__9</name>
+       <data>
+           <file>data/meshes/testing/burl_1_both.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__9.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__9.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__9</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__9</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__9</name>
+       <data>
+           <mesh>piano__9.obj</mesh>
+           <material>piano__9</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__10</name>
+       <data>
+           <file>data/meshes/testing/metal_rusted.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__10.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__10.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__10</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__10</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__10</name>
+       <data>
+           <mesh>piano__10.obj</mesh>
+           <material>piano__10</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>
+    <texture>
+       <name>piano__11</name>
+       <data>
+           <file>data/meshes/testing/burl_1_both.jpg</file>
+        </data>
+    </texture>
+    
+    <mesh>
+       <name>piano__11.obj</name>
+       <data>
+           <file>data/meshes/testing/piano__11.obj</file>
+       </data>
+   </mesh>
+          
+    <material>
+       <name>piano__11</name>
+       <data>
+           <type>Ambient</type>
+           <diffuse>
+               <texture>piano__11</texture>
+           </diffuse>
+       </data>
+   </material>
+   
+   <object>
+       <name>piano__11</name>
+       <data>
+           <mesh>piano__11.obj</mesh>
+           <material>piano__11</material>
+           <translation>0 0 0</translation>
+           <scale>2 2 2</scale>
+           <rotation>0 -90 0</rotation>
+       </data>
+   </object>

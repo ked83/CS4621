@@ -1,0 +1,3 @@
+# exported by CopperCube
+mtllib table1.mtl
+

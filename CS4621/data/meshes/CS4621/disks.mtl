@@ -1,0 +1,79 @@
+# exported by CopperCube
+
+newmtl mat0
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/books/yellow_pine_01.jpg
+
+newmtl mat1
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/books/yellow_pine_02.jpg
+
+newmtl mat2
+Ka 0.000000 0.000000 0.000000
+Kd 0.156863 0.800000 0.800000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat3
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.227451 0.227451
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat4
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.000000 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat5
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.749020 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat6
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.200000 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat7
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat8
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat9
+Ka 0.000000 0.000000 0.000000
+Kd 0.294118 0.600000 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+
+newmtl mat10
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.247059 0.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/desktop/coppercube.app/contents/resources/bif_tex_editor_defaults/default_white.png
+

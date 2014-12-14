@@ -1,5 +1,5 @@
 # exported by CopperCube
-mtllib .mtl
+mtllib microscope.mtl
 
 g grp1
 v 0.000000 0.000000 -550.000000

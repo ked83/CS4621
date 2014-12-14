@@ -89,10 +89,11 @@ public class GLRenderTarget extends GLTexture {
     	glBindFramebuffer(FramebufferTarget.Framebuffer, 0);
     }
     
-    //what do arguments represent, and how to actually get pixel values
+    //start Pablo
     public void useDepth(int texUnit, int unTex) {
     	glActiveTexture(texUnit);
     	glBindTexture(GL11.GL_TEXTURE_2D, texDepth);
     	glUniform1i(unTex, texUnit-TextureUnit.Texture0);
     }
+    //end Pablo
 }

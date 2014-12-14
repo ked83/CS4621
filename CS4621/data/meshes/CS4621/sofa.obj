@@ -1,5 +1,5 @@
 # exported by CopperCube
-mtllib .mtl
+mtllib sofa.mtl
 
 g grp1
 v -8.764625 -5.549768 -4.583604

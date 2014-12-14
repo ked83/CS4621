@@ -80,6 +80,7 @@ public class ViewScreen extends GameScreen {
 	File earthFile = new File("data/scenes/Earth.xml"); 
 	File ourScene = new File("data/scenes/scene1.xml");
 	private void loadFile() {
+		System.out.println("In loadFile()");
 		String file = earthFile.getAbsolutePath();
 		Parser p = new Parser();
 		Object o = p.parse(file, Scene.class);
@@ -110,7 +111,7 @@ public class ViewScreen extends GameScreen {
 	@Override
 	public void build() {
 		app = (SceneApp)game;
-		loadFile(); //kelsey
+		//loadFile(); //kelsey
 		renderer = new Renderer();
 	}
 	@Override
@@ -189,7 +190,7 @@ public class ViewScreen extends GameScreen {
 	@Override
 	public void onEntry(GameTime gameTime) {
 		cameraIndex = 0;
-		/*
+        /*
 		//start Pablo
 		rt.init();
 		ByteBuffer bb = null;
@@ -197,7 +198,7 @@ public class ViewScreen extends GameScreen {
 		rt.buildRenderTarget();
 		soProgram = new GLProgram();
 		//fill in
-		soProgram.quickCreateResource("Sobel", vsRes, fsRes, null);
+		soProgram.quickCreateResource("Sobel", "Sobel.vert", "Sobel.frag", null);
 		
 		//initialize vertex buffer
 		//(-1,1)---(1,1)
@@ -317,7 +318,7 @@ public class ViewScreen extends GameScreen {
 			manipController.checkPicking(renderer, camController.camera, Mouse.getX(), Mouse.getY());
 		}
 		
-		rt.useTarget();
+		//rt.useTarget();
 		
 		Vector3 bg = app.scene.background;
 		GL11.glClearColor(bg.x, bg.y, bg.z, 0);
@@ -340,8 +341,8 @@ public class ViewScreen extends GameScreen {
 		
         GLError.get("draw");
         
-        GLRenderTarget.unuseTarget();
-        GL11.glViewport(0, 0, game.getWidth(), game.getHeight());
+        //GLRenderTarget.unuseTarget();
+        //GL11.glViewport(0, 0, game.getWidth(), game.getHeight());
         
         
         /*
@@ -356,6 +357,6 @@ public class ViewScreen extends GameScreen {
         GL11.glDrawElements(GL11.GL_TRIANGLES, 0, 6, 0);
         ibQuad.unbind();
         //end Pablo
-         */
+        */
 	}
 }

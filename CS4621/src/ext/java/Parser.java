@@ -209,6 +209,7 @@ public class Parser {
 	 */
 	private Object parseObject(Class<?> c, Node n) {
 
+		System.out.println("c is "+c);
 		Object resultingObject = null;
 		NamedNodeMap attributes = n.getAttributes();
 		Node typeAttribute = attributes.getNamedItem("type");
