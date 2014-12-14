@@ -1,0 +1,23 @@
+# exported by CopperCube
+
+newmtl mat0
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/component_42/wood_cherry_original.jpg
+
+newmtl mat1
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/ambiera/coppercube 1.0.5/textures/tiles_street_black.jpg
+
+newmtl mat2
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/ambiera/coppercube 1.0.5/textures/bricks_red_dark.jpg
+

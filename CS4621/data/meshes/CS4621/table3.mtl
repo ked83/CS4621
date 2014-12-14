@@ -1,0 +1,23 @@
+# exported by CopperCube
+
+newmtl mat0
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+24.999998map_Kd c:\documents and settings\efe\desktop\ambieramodels\modelsetleri1\prefabtest\model3.jpg
+
+newmtl mat1
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+24.999998map_Kd c:\documents and settings\efe\desktop\ambieramodels\modelsetleri1\prefabtest\model3.jpg
+
+newmtl mat2
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+24.999998map_Kd c:\documents and settings\efe\desktop\ambieramodels\modelsetleri1\glasstexture.png
+

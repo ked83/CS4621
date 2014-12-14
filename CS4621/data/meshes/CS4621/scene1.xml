@@ -1,109 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<scene>
-	
-    <material>
-		<name>CookTorranceMaterial</name>
-		<data>
-			<type>CookTorrance</type>
-			<diffuse>
-				<color>255 0 20 255</color>
-			</diffuse>
-			<roughness>0.2</roughness>
-		</data>
-	</material>
-	
-	<material>
-		<name>Ambient</name>
-		<data>
-			<type>Ambient</type>
-			<diffuse>
-				<color>255 255 255 255</color>
-			</diffuse>
-		</data>
-	</material>
-	
-	<material>
-		<name>PhongMaterial</name>
-		<data>
-			<type>Phong</type>
-			<diffuse>
-				<color>255 255 255 255</color>
-			</diffuse>
-			<shininess>50</shininess>
-		</data>
-	</material>
-
-    
-    <object>
-		<name>Camera</name>
-		<data type="SceneCamera">
-			<zPlanes>0.02 1000.0</zPlanes>
-			<perspective>0.01 0.01</perspective>
-            
-			<translation>163 3 77</translation>
-		</data>
-	</object>
-    
-	<object>
-		<name>LightObj0</name>
-		<data>
-			<mesh>Sphere</mesh>
-			<scale>0.1 0.1 0.1</scale>
-			<translation>0.75 1.5 0</translation>
-            
-			<material>Ambient</material>
-		</data>
-	</object>
-	<object>
-		<name>Light0</name>
-		<data type="SceneLight">
-			<parent>LightObj0</parent>
-			<intensity>1 1 1</intensity>
-		</data>
-	</object>
-	
-	<object>
-		<name>LightObj1</name>
-		<data>
-			<mesh>Sphere</mesh>
-			<scale>0.1 0.1 0.1</scale>
-			<translation>-0.75 -1.5 2</translation>
-            
-			<material>Ambient</material>
-		</data>
-	</object>
-	<object>
-		<name>Light1</name>
-		<data type="SceneLight">
-			<parent>LightObj1</parent>
-			<intensity>1 1 1</intensity>
-		</data>
-	</object>
-	
-	<object>
-		<name>AmbientLight</name>
-		<data type="SceneLight">
-			<intensity>0.05 0.05 0.05</intensity>
-			<isAmbient>true</isAmbient>
-		</data>
-	</object>
-
-        <mesh>
-            <name>skybox.obj</name>
-            <data>
-                <file>data/meshes/CS4621/skybox.obj</file>
-            </data>
-        </mesh>
-        <object>
-            <name>skybox</name>
-            <data>
-                <mesh>skybox.obj</mesh>
-                <material>PhongMaterial</material>
-                <translation>0 0 0</translation>
-                <scale>1 1 1</scale>
-                <rotation>0 0 0</rotation>
-            </data>
-        </object>
         <mesh>
             <name>counterR.obj</name>
             <data>
@@ -115,9 +9,9 @@
             <data>
                 <mesh>counterR.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-174.98504638671875 -12.002541542053223 79.77511596679688</translation>
                 <scale>1.5 1.5 1.5</scale>
                 <rotation>90 90 90</rotation>
+<translation>-174.98505 -12.002542 79.775116</translation>
             </data>
         </object>
         <mesh>
@@ -131,9 +25,9 @@
             <data>
                 <mesh>table2.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>104.94923400878906 0 -201.44808959960938</translation>
                 <scale>5 5 3</scale>
                 <rotation>0 0 0</rotation>
+<translation>104.949234 0.0 -201.44809</translation>
             </data>
         </object>
         <mesh>
@@ -147,9 +41,9 @@
             <data>
                 <mesh>setPotions.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>22.861671447753906 13.932852745056152 -163.28643798828125</translation>
                 <scale>3 3 3</scale>
                 <rotation>0 0 0</rotation>
+<translation>22.861671 13.932853 -163.28644</translation>
             </data>
         </object>
         <mesh>
@@ -163,9 +57,9 @@
             <data>
                 <mesh>potion1.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>79.1991195678711 15.253023147583008 -201.43479919433594</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>0 0 0</rotation>
+<translation>79.19912 15.253023 -201.4348</translation>
             </data>
         </object>
         <mesh>
@@ -179,9 +73,9 @@
             <data>
                 <mesh>potion4.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>79.31427001953125 16.37430191040039 -188.22207641601562</translation>
                 <scale>0.5 0.5 0.5</scale>
                 <rotation>0 0 0</rotation>
+<translation>79.31427 16.374302 -188.22208</translation>
             </data>
         </object>
         <mesh>
@@ -195,9 +89,9 @@
             <data>
                 <mesh>potion2.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>68.40694427490234 15.253023147583008 -201.1638641357422</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>0 0 0</rotation>
+<translation>68.406944 15.253023 -201.16386</translation>
             </data>
         </object>
         <mesh>
@@ -211,9 +105,9 @@
             <data>
                 <mesh>potion3.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>53.69688415527344 15.253023147583008 -203.36904907226562</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>0 0 0</rotation>
+<translation>53.696884 15.253023 -203.36905</translation>
             </data>
         </object>
         <mesh>
@@ -227,9 +121,9 @@
             <data>
                 <mesh>book1.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>1.7574646472930908 48.39426803588867 200.00234985351562</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>9 -1 -88</rotation>
+<translation>1.7574646 48.394268 200.00235</translation>
             </data>
         </object>
         <mesh>
@@ -243,9 +137,9 @@
             <data>
                 <mesh>bookshelf.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-116.55270385742188 -5.439353942871094 224.8681640625</translation>
                 <scale>0.5 0.5 0.5</scale>
                 <rotation>0 180 0</rotation>
+<translation>-116.552704 -5.439354 224.86816</translation>
             </data>
         </object>
         <mesh>
@@ -259,9 +153,9 @@
             <data>
                 <mesh>book5.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>39.093048095703125 47.83320999145508 199.97378540039062</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>9 -1 -88</rotation>
+<translation>39.09305 47.83321 199.97379</translation>
             </data>
         </object>
         <mesh>
@@ -275,9 +169,9 @@
             <data>
                 <mesh>microscope.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>132.37168884277344 16.112146377563477 -187.8588104248047</translation>
                 <scale>0.04999999701976776 0.04999999701976776 0.04999999701976776</scale>
                 <rotation>0 0 0</rotation>
+<translation>132.37169 16.112146 -187.85881</translation>
             </data>
         </object>
         <mesh>
@@ -291,9 +185,9 @@
             <data>
                 <mesh>books.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>41.82646942138672 62.798824310302734 197.66009521484375</translation>
                 <scale>0.07000000029802322 0.07000000029802322 0.07000000029802322</scale>
                 <rotation>0 90 0</rotation>
+<translation>41.82647 62.798824 197.6601</translation>
             </data>
         </object>
         <mesh>
@@ -307,9 +201,9 @@
             <data>
                 <mesh>disks.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-41.652652740478516 41.99953079223633 205.17294311523438</translation>
                 <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
                 <rotation>0 180 0</rotation>
+<translation>-41.652653 41.99953 205.17294</translation>
             </data>
         </object>
         <mesh>
@@ -323,9 +217,9 @@
             <data>
                 <mesh>magnet.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>11.703359603881836 17.204055786132812 -128.62374877929688</translation>
                 <scale>0.25 0.25 0.25</scale>
                 <rotation>0 0 0</rotation>
+<translation>11.70336 17.204056 -128.62375</translation>
             </data>
         </object>
         <mesh>
@@ -339,9 +233,9 @@
             <data>
                 <mesh>book3.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>11.458081245422363 48.05014419555664 203.4146728515625</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>0 0 -80</rotation>
+<translation>11.458081 48.050144 203.41467</translation>
             </data>
         </object>
         <mesh>
@@ -355,9 +249,9 @@
             <data>
                 <mesh>book6.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>43.70170211791992 47.70551681518555 199.90383911132812</translation>
                 <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
                 <rotation>0 0 -90</rotation>
+<translation>43.701702 47.705517 199.90384</translation>
             </data>
         </object>
         <mesh>
@@ -371,9 +265,9 @@
             <data>
                 <mesh>house.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>0 176.2935028076172 -3.018106698989868</translation>
                 <scale>5 5 5</scale>
                 <rotation>0 0 0</rotation>
+<translation>0.0 176.2935 -3.0181067</translation>
             </data>
         </object>
         <mesh>
@@ -387,9 +281,9 @@
             <data>
                 <mesh>counter.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>212.0876922607422 -12.130390167236328 215.0875244140625</translation>
                 <scale>0.04999999701976776 0.04999999701976776 0.04999999701976776</scale>
                 <rotation>0 0 0</rotation>
+<translation>212.08769 -12.13039 215.08752</translation>
             </data>
         </object>
         <mesh>
@@ -403,9 +297,9 @@
             <data>
                 <mesh>nightstand.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>85.062255859375 33.58253479003906 195.2427978515625</translation>
                 <scale>2 2 2</scale>
                 <rotation>0 0 0</rotation>
+<translation>85.062256 33.582535 195.2428</translation>
             </data>
         </object>
         <mesh>
@@ -419,9 +313,9 @@
             <data>
                 <mesh>flowerpot4.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>122.97737121582031 36.55817794799805 194.23333740234375</translation>
                 <scale>1 1 1</scale>
                 <rotation>0 0 0</rotation>
+<translation>122.97737 36.558178 194.23334</translation>
             </data>
         </object>
         <mesh>
@@ -435,9 +329,9 @@
             <data>
                 <mesh>book7.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>195.12319946289062 35.20330810546875 192.49972534179688</translation>
                 <scale>0.30000001192092896 0.30000001192092896 0.30000001192092896</scale>
                 <rotation>0 -90 0</rotation>
+<translation>195.1232 35.20331 192.49973</translation>
             </data>
         </object>
         <mesh>
@@ -451,9 +345,9 @@
             <data>
                 <mesh>key.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>193.46670532226562 33.91215896606445 190.71322631835938</translation>
                 <scale>0.19999998807907104 0.19999998807907104 0.19999998807907104</scale>
                 <rotation>90 90 0</rotation>
+<translation>193.4667 33.91216 190.71323</translation>
             </data>
         </object>
         <mesh>
@@ -467,9 +361,9 @@
             <data>
                 <mesh>grandfather.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>212.9893035888672 -20.315017700195312 589.5029907226562</translation>
                 <scale>2 2 2</scale>
                 <rotation>0 -90 0</rotation>
+<translation>212.9893 -20.315018 589.503</translation>
             </data>
         </object>
         <mesh>
@@ -483,9 +377,9 @@
             <data>
                 <mesh>book4.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>121.2739028930664 44.980979919433594 245.68777465820312</translation>
                 <scale>1.5299999713897705 1.5299999713897705 1.5299999713897705</scale>
                 <rotation>0 0 0</rotation>
+<translation>121.2739 44.98098 245.68777</translation>
             </data>
         </object>
         <mesh>
@@ -499,9 +393,9 @@
             <data>
                 <mesh>book2.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>81.75654602050781 44.483943939208984 238.82705688476562</translation>
                 <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
                 <rotation>0 0 0</rotation>
+<translation>81.756546 44.483944 238.82706</translation>
             </data>
         </object>
         <mesh>
@@ -515,9 +409,9 @@
             <data>
                 <mesh>Fireplace.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-184.5867919921875 -8.81846809387207 -54.377586364746094</translation>
                 <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
                 <rotation>0 90 0</rotation>
+<translation>-184.58679 -8.818468 -54.377586</translation>
             </data>
         </object>
         <mesh>
@@ -531,9 +425,9 @@
             <data>
                 <mesh>piano.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>180.58872985839844 -12.890229225158691 60.7122802734375</translation>
                 <scale>77 77 77</scale>
                 <rotation>0 -90 0</rotation>
+<translation>180.58873 -12.890229 60.71228</translation>
             </data>
         </object>
         <mesh>
@@ -547,9 +441,9 @@
             <data>
                 <mesh>armchair.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-71.74598693847656 12.814464569091797 104.97685241699219</translation>
                 <scale>3 3 3</scale>
                 <rotation>0 70 0</rotation>
+<translation>-71.74599 12.814465 104.97685</translation>
             </data>
         </object>
         <mesh>
@@ -563,9 +457,9 @@
             <data>
                 <mesh>sofa.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-60.759315490722656 14.837265968322754 -6.1463117599487305</translation>
                 <scale>3 3 3</scale>
                 <rotation>0 90 0</rotation>
+<translation>-60.759315 14.837266 -6.1463118</translation>
             </data>
         </object>
         <mesh>
@@ -579,9 +473,9 @@
             <data>
                 <mesh>armchair1.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-72.84827423095703 12.814464569091797 -111.14120483398438</translation>
                 <scale>3 3 3</scale>
                 <rotation>0 110 0</rotation>
+<translation>-72.848274 12.814465 -111.141205</translation>
             </data>
         </object>
         <mesh>
@@ -595,9 +489,9 @@
             <data>
                 <mesh>coffeetable.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-116.58401489257812 0 -2.094910144805908</translation>
                 <scale>5 2 2</scale>
                 <rotation>0 90 0</rotation>
+<translation>-116.584015 0.0 -2.0949101</translation>
             </data>
         </object>
         <mesh>
@@ -611,9 +505,9 @@
             <data>
                 <mesh>flowerpot3.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-117.14202880859375 7.637538909912109 34.646507263183594</translation>
                 <scale>0.5 0.5 0.5</scale>
                 <rotation>0 0 0</rotation>
+<translation>-117.14203 7.637539 34.646507</translation>
             </data>
         </object>
         <mesh>
@@ -627,9 +521,9 @@
             <data>
                 <mesh>counterL.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-174.98504638671875 -12.002541542053223 -220.11502075195312</translation>
                 <scale>1.5 1.5 1.5</scale>
                 <rotation>90 90 90</rotation>
+<translation>-174.98505 -12.002542 -220.11502</translation>
             </data>
         </object>
         <mesh>
@@ -643,9 +537,9 @@
             <data>
                 <mesh>flowerpot2.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-117.14202880859375 7.637538909912109 -3.7468912601470947</translation>
                 <scale>0.5 0.5 0.5</scale>
                 <rotation>0 0 0</rotation>
+<translation>-117.14203 7.637539 -3.7468913</translation>
             </data>
         </object>
         <mesh>
@@ -659,9 +553,9 @@
             <data>
                 <mesh>flowerpot1.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>-117.14202880859375 7.637538909912109 -45.96254348754883</translation>
                 <scale>0.5 0.5 0.5</scale>
                 <rotation>0 0 0</rotation>
+<translation>-117.14203 7.637539 -45.962543</translation>
             </data>
         </object>
         <mesh>
@@ -675,9 +569,9 @@
             <data>
                 <mesh>table3.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>9.339696884155273 0 -155.40452575683594</translation>
                 <scale>5 5 3</scale>
                 <rotation>0 90 0</rotation>
+<translation>9.339697 0.0 -155.40453</translation>
             </data>
         </object>
         <mesh>
@@ -691,41 +585,9 @@
             <data>
                 <mesh>table1.obj</mesh>
                 <material>PhongMaterial</material>
-                <translation>201.0374755859375 0 -156.27337646484375</translation>
                 <scale>5 5 3</scale>
                 <rotation>0 90 0</rotation>
+<translation>201.03748 0.0 -156.27338</translation>
             </data>
         </object>
-        <mesh>
-            <name>piano1.obj</name>
-            <data>
-                <file>data/meshes/CS4621/piano1.obj</file>
-            </data>
-        </mesh>
-        <object>
-            <name>piano1</name>
-            <data>
-                <mesh>piano1.obj</mesh>
-                <material>PhongMaterial</material>
-                <translation>180.58872985839844 -12.890229225158691 60.7122802734375</translation>
-                <scale>77 77 77</scale>
-                <rotation>0 -90 0</rotation>
-            </data>
-        </object>
-        <mesh>
-            <name>piano2.obj</name>
-            <data>
-                <file>data/meshes/CS4621/piano2.obj</file>
-            </data>
-        </mesh>
-        <object>
-            <name>piano2</name>
-            <data>
-                <mesh>piano2.obj</mesh>
-                <material>PhongMaterial</material>
-                <translation>180.58872985839844 -12.890229225158691 60.7122802734375</translation>
-                <scale>77 77 77</scale>
-                <rotation>0 -90 0</rotation>
-            </data>
-        </object>
-    </scene>
+

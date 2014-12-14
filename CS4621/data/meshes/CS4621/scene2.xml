@@ -1,0 +1,592 @@
+        <mesh>
+            <name>counterR.obj</name>
+            <data>
+                <file>data/meshes/CS4621/counterR.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>counterR</name>
+            <data>
+                <mesh>counterR.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-174.98504638671875 -12.002541542053223 79.77511596679688</translation>
+                <scale>1.5 1.5 1.5</scale>
+                <rotation>90 90 90</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>table2.obj</name>
+            <data>
+                <file>data/meshes/CS4621/table2.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>table2</name>
+            <data>
+                <mesh>table2.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>104.94923400878906 0 -201.44808959960938</translation>
+                <scale>5 5 3</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>setPotions.obj</name>
+            <data>
+                <file>data/meshes/CS4621/setPotions.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>setPotions</name>
+            <data>
+                <mesh>setPotions.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>22.861671447753906 13.932852745056152 -163.28643798828125</translation>
+                <scale>3 3 3</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>potion1.obj</name>
+            <data>
+                <file>data/meshes/CS4621/potion1.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>potion1</name>
+            <data>
+                <mesh>potion1.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>79.1991195678711 15.253023147583008 -201.43479919433594</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>potion4.obj</name>
+            <data>
+                <file>data/meshes/CS4621/potion4.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>potion4</name>
+            <data>
+                <mesh>potion4.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>79.31427001953125 16.37430191040039 -188.22207641601562</translation>
+                <scale>0.5 0.5 0.5</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>potion2.obj</name>
+            <data>
+                <file>data/meshes/CS4621/potion2.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>potion2</name>
+            <data>
+                <mesh>potion2.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>68.40694427490234 15.253023147583008 -201.1638641357422</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>potion3.obj</name>
+            <data>
+                <file>data/meshes/CS4621/potion3.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>potion3</name>
+            <data>
+                <mesh>potion3.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>53.69688415527344 15.253023147583008 -203.36904907226562</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book1.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book1.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book1</name>
+            <data>
+                <mesh>book1.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>1.7574646472930908 48.39426803588867 200.00234985351562</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>9 -1 -88</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>bookshelf.obj</name>
+            <data>
+                <file>data/meshes/CS4621/bookshelf.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>bookshelf</name>
+            <data>
+                <mesh>bookshelf.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-116.55270385742188 -5.439353942871094 224.8681640625</translation>
+                <scale>0.5 0.5 0.5</scale>
+                <rotation>0 180 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book5.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book5.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book5</name>
+            <data>
+                <mesh>book5.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>39.093048095703125 47.83320999145508 199.97378540039062</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>9 -1 -88</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>microscope.obj</name>
+            <data>
+                <file>data/meshes/CS4621/microscope.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>microscope</name>
+            <data>
+                <mesh>microscope.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>132.37168884277344 16.112146377563477 -187.8588104248047</translation>
+                <scale>0.04999999701976776 0.04999999701976776 0.04999999701976776</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>books.obj</name>
+            <data>
+                <file>data/meshes/CS4621/books.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>books</name>
+            <data>
+                <mesh>books.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>41.82646942138672 62.798824310302734 197.66009521484375</translation>
+                <scale>0.07000000029802322 0.07000000029802322 0.07000000029802322</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>disks.obj</name>
+            <data>
+                <file>data/meshes/CS4621/disks.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>disks</name>
+            <data>
+                <mesh>disks.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-41.652652740478516 41.99953079223633 205.17294311523438</translation>
+                <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
+                <rotation>0 180 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>magnet.obj</name>
+            <data>
+                <file>data/meshes/CS4621/magnet.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>magnet</name>
+            <data>
+                <mesh>magnet.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>11.703359603881836 17.204055786132812 -128.62374877929688</translation>
+                <scale>0.25 0.25 0.25</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book3.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book3.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book3</name>
+            <data>
+                <mesh>book3.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>11.458081245422363 48.05014419555664 203.4146728515625</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>0 0 -80</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book6.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book6.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book6</name>
+            <data>
+                <mesh>book6.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>43.70170211791992 47.70551681518555 199.90383911132812</translation>
+                <scale>0.20000000298023224 0.20000000298023224 0.20000000298023224</scale>
+                <rotation>0 0 -90</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>house.obj</name>
+            <data>
+                <file>data/meshes/CS4621/house.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>house</name>
+            <data>
+                <mesh>house.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>0 176.2935028076172 -3.018106698989868</translation>
+                <scale>5 5 5</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>counter.obj</name>
+            <data>
+                <file>data/meshes/CS4621/counter.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>counter</name>
+            <data>
+                <mesh>counter.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>212.0876922607422 -12.130390167236328 215.0875244140625</translation>
+                <scale>0.04999999701976776 0.04999999701976776 0.04999999701976776</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>nightstand.obj</name>
+            <data>
+                <file>data/meshes/CS4621/nightstand.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>nightstand</name>
+            <data>
+                <mesh>nightstand.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>85.062255859375 33.58253479003906 195.2427978515625</translation>
+                <scale>2 2 2</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>flowerpot4.obj</name>
+            <data>
+                <file>data/meshes/CS4621/flowerpot4.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>flowerpot4</name>
+            <data>
+                <mesh>flowerpot4.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>122.97737121582031 36.55817794799805 194.23333740234375</translation>
+                <scale>1 1 1</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book7.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book7.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book7</name>
+            <data>
+                <mesh>book7.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>195.12319946289062 35.20330810546875 192.49972534179688</translation>
+                <scale>0.30000001192092896 0.30000001192092896 0.30000001192092896</scale>
+                <rotation>0 -90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>key.obj</name>
+            <data>
+                <file>data/meshes/CS4621/key.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>key</name>
+            <data>
+                <mesh>key.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>193.46670532226562 33.91215896606445 190.71322631835938</translation>
+                <scale>0.19999998807907104 0.19999998807907104 0.19999998807907104</scale>
+                <rotation>90 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>grandfather.obj</name>
+            <data>
+                <file>data/meshes/CS4621/grandfather.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>grandfather</name>
+            <data>
+                <mesh>grandfather.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>212.9893035888672 -20.315017700195312 589.5029907226562</translation>
+                <scale>2 2 2</scale>
+                <rotation>0 -90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book4.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book4.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book4</name>
+            <data>
+                <mesh>book4.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>121.2739028930664 44.980979919433594 245.68777465820312</translation>
+                <scale>1.5299999713897705 1.5299999713897705 1.5299999713897705</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>book2.obj</name>
+            <data>
+                <file>data/meshes/CS4621/book2.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>book2</name>
+            <data>
+                <mesh>book2.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>81.75654602050781 44.483943939208984 238.82705688476562</translation>
+                <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>Fireplace.obj</name>
+            <data>
+                <file>data/meshes/CS4621/Fireplace.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>Fireplace</name>
+            <data>
+                <mesh>Fireplace.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-184.5867919921875 -8.81846809387207 -54.377586364746094</translation>
+                <scale>1.2999999523162842 1.2999999523162842 1.2999999523162842</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>piano.obj</name>
+            <data>
+                <file>data/meshes/CS4621/piano.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>piano</name>
+            <data>
+                <mesh>piano.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>180.58872985839844 -12.890229225158691 60.7122802734375</translation>
+                <scale>77 77 77</scale>
+                <rotation>0 -90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>armchair.obj</name>
+            <data>
+                <file>data/meshes/CS4621/armchair.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>armchair</name>
+            <data>
+                <mesh>armchair.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-71.74598693847656 12.814464569091797 104.97685241699219</translation>
+                <scale>3 3 3</scale>
+                <rotation>0 70 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>sofa.obj</name>
+            <data>
+                <file>data/meshes/CS4621/sofa.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>sofa</name>
+            <data>
+                <mesh>sofa.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-60.759315490722656 14.837265968322754 -6.1463117599487305</translation>
+                <scale>3 3 3</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>armchair1.obj</name>
+            <data>
+                <file>data/meshes/CS4621/armchair1.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>armchair1</name>
+            <data>
+                <mesh>armchair1.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-72.84827423095703 12.814464569091797 -111.14120483398438</translation>
+                <scale>3 3 3</scale>
+                <rotation>0 110 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>coffeetable.obj</name>
+            <data>
+                <file>data/meshes/CS4621/coffeetable.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>coffeetable</name>
+            <data>
+                <mesh>coffeetable.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-116.58401489257812 0 -2.094910144805908</translation>
+                <scale>5 2 2</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>flowerpot3.obj</name>
+            <data>
+                <file>data/meshes/CS4621/flowerpot3.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>flowerpot3</name>
+            <data>
+                <mesh>flowerpot3.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-117.14202880859375 7.637538909912109 34.646507263183594</translation>
+                <scale>0.5 0.5 0.5</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>counterL.obj</name>
+            <data>
+                <file>data/meshes/CS4621/counterL.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>counterL</name>
+            <data>
+                <mesh>counterL.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-174.98504638671875 -12.002541542053223 -220.11502075195312</translation>
+                <scale>1.5 1.5 1.5</scale>
+                <rotation>90 90 90</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>flowerpot2.obj</name>
+            <data>
+                <file>data/meshes/CS4621/flowerpot2.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>flowerpot2</name>
+            <data>
+                <mesh>flowerpot2.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-117.14202880859375 7.637538909912109 -3.7468912601470947</translation>
+                <scale>0.5 0.5 0.5</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>flowerpot1.obj</name>
+            <data>
+                <file>data/meshes/CS4621/flowerpot1.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>flowerpot1</name>
+            <data>
+                <mesh>flowerpot1.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>-117.14202880859375 7.637538909912109 -45.96254348754883</translation>
+                <scale>0.5 0.5 0.5</scale>
+                <rotation>0 0 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>table3.obj</name>
+            <data>
+                <file>data/meshes/CS4621/table3.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>table3</name>
+            <data>
+                <mesh>table3.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>9.339696884155273 0 -155.40452575683594</translation>
+                <scale>5 5 3</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>
+        <mesh>
+            <name>table1.obj</name>
+            <data>
+                <file>data/meshes/CS4621/table1.obj</file>
+            </data>
+        </mesh>
+        <object>
+            <name>table1</name>
+            <data>
+                <mesh>table1.obj</mesh>
+                <material>PhongMaterial</material>
+                <translation>201.0374755859375 0 -156.27337646484375</translation>
+                <scale>5 5 3</scale>
+                <rotation>0 90 0</rotation>
+            </data>
+        </object>

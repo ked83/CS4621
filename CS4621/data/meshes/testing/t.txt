@@ -1,0 +1,3 @@
+# exported by CopperCube
+mtllib piano.mtl
+

@@ -1,0 +1,51 @@
+# exported by CopperCube
+
+newmtl mat0
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/urbana.jpg
+
+newmtl mat1
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/_48.jpg
+
+newmtl mat2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/vegetation_bark_maple2.jpg
+
+newmtl mat3
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/_49.jpg
+
+newmtl mat4
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/_31.jpg
+
+newmtl mat5
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/brist_cap.jpg
+
+newmtl mat6
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+0.000000map_Kd /users/melanie/downloads/bristol-wood-box-set/_5.jpg
+

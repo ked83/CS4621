@@ -1,5 +1,5 @@
 # exported by CopperCube
-mtllib .mtl
+mtllib house.mtl
 
 g grp1
 v 45.000000 -37.500000 -45.000000
