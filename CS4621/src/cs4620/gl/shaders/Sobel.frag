@@ -1,73 +1,21 @@
 #version 120
 
-uniform sampler2d
+uniform sampler2d unTexColor;
+uniform sampler2d unTexDepth;
+
+varying vec2 vCoord;
 
 void main() {
-	// interpolating normals will change the length of the normal, so renormalize the normal.
-	vec3 N = normalize(fN);
-	//view direction normal
-	vec3 V = normalize(worldCam - worldPos.xyz);
+	float A = texture2D(unTexDepth, vec2(vCoord.x-1,vCoord.y+1);
+	float B = texture2D(unTexDepth, vec2(vCoord.x,vCoord.y+1);
+	float C = texture2D(unTexDepth, vec2(vCoord.x+1,vCoord.y+1);
+	float D = texture2D(unTexDepth, vec2(vCoord.x-1,vCoord.y);
+	float E = texture2D(unTexDepth, vec2(vCoord.x+1,vCoord.y);
+	float F = texture2D(unTexDepth, vec2(vCoord.x-1,vCoord.y-1);
+	float G = texture2D(unTexDepth, vec2(vCoord.x,vCoord.y-1);
+	float H = texture2D(unTexDepth, vec2(vCoord.x+1,vCoord.y-1);
 	
-	vec4 finalColor = vec4(0.0, 0.0, 0.0, 0.0);
-	float highlight = 1.0;
-	float shadow = 0.9;
-	float shadow2 = 0.7;
-	
-	float view = dot(N, V);
-	
-	if (view < .25) {
-	    finalColor = vec4(0.0,0.0,0.0,1.0);
-	  }
-	
-	else {
-	  for (int i = 0; i < numLights; i++) {
-	    float r = length(lightPosition[i] - worldPos.xyz);
-	    //normal from point to light
-	    vec3 L = normalize(lightPosition[i] - worldPos.xyz); 
-	    
-	    
-	    if (r > 2) {
-	      highlight = highlight * 0.8;
-	      shadow = shadow * 0.8;
-	      shadow2 = shadow2 * 0.8;
-	    }
-	    if (r > 4) {
-	      highlight = highlight * 0.7;
-	      shadow = shadow * 0.7;
-	      shadow2 = shadow2 * 0.7;
-	    }
-	    if (r > 6) {
-	      highlight = highlight * 0.55;
-	      shadow = shadow * 0.55;
-	      shadow2 = shadow2 * 0.55;
-	    }
-	    if (r > 8) {
-	      highlight = highlight * 0.3;
-	      shadow = shadow * 0.3;
-	      shadow2 = shadow2 * 0.3;
-	    }
-  
-	    // get diffuse color
-	    vec4 diff = getDiffuseColor(fUV);
-	    diff = clamp(diff, 0.0, 1.0);
-	  
-	    float intensity = dot(N, L);
-	    
-	    finalColor += clamp(vec4(lightIntensity[i], 0.0) * (diff), 0.0, 1.0);
-	  
-	    if (intensity > 0.9) {
-	      finalColor = finalColor * highlight;
-	    }
-	    if (intensity < 0.9) {
-	      finalColor = finalColor * shadow;
-	    }
-	  
-	    if (intensity < 0) {
-	      finalColor = finalColor * shadow2;
-	    }
-	    
-	  }
-	}
+	float g = (abs(A+2*B+C-F-2*G-H)+abs(C+2*E+H-A-2*D-F))/8.0;
 
-	gl_FragColor = finalColor; 
+	gl_FragColor = texture2D(unTexDepth, vCoord); 
 }

@@ -47,12 +47,12 @@ void main() {
 	      shadow = shadow * 0.7;
 	      shadow2 = shadow2 * 0.7;
 	    }
-	    if (r > 6) {
+	    if (r > 8) {
 	      highlight = highlight * 0.55;
 	      shadow = shadow * 0.55;
 	      shadow2 = shadow2 * 0.55;
 	    }
-	    if (r > 8) {
+	    if (r > 16) {
 	      highlight = highlight * 0.3;
 	      shadow = shadow * 0.3;
 	      shadow2 = shadow2 * 0.3;

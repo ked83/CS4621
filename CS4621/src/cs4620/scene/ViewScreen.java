@@ -220,7 +220,7 @@ public class ViewScreen extends GameScreen {
 		ibQuad.setAsIndexInt();
 		ibQuad.setDataInitial(ibIntBuff);
 		//end Pablo
-		 */
+		*/ 
 		
 		rController = new RenderController(app.scene, new Vector2(app.getWidth(), app.getHeight()));
 		renderer.buildPasses(rController.env.root);

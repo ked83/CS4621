@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<scene>
+	<mesh>
+		<name>Teapot.obj</name>
+		<data>
+			<file>data/meshes/teapot.obj</file>
+		</data>
+	</mesh>
+     <texture>
+		<name>EarthTexture</name>
+		<data>
+			<file>data/textures/Tablecloth.png</file>
+		</data>
+	</texture>
+
+	<material>
+		<name>EarthMaterial</name>
+		<data>
+			<type>Cel</type>
+			<diffuse>
+				<texture>EarthTexture</texture>
+			</diffuse>
+			<shininess>50</shininess>
+		</data>
+	</material>
+
+	<material>
+		<name>Ambient</name>
+		<data>
+			<type>Ambient</type>
+			<diffuse>
+				<color>255 255 255 255</color>
+			</diffuse>
+		</data>
+	</material>
+	
+	<object>
+		<name>Earth</name>
+		<data>
+			<mesh>Teapot.obj</mesh>
+			<scale>0.5 0.5 0.5</scale>
+			<material>EarthMaterial</material>
+		</data>
+	</object>
+	
+	<object>
+		<name>Camera</name>
+		<data type="SceneCamera">
+			<zPlanes>0.02 1000.0</zPlanes>
+			<perspective>0.01 0.01</perspective>
+
+			<translation>0 2 10</translation>
+		</data>
+	</object>
+	<object>
+		<name>Light0</name>
+		<data type="SceneLight">
+			<parent>Camera</parent>
+			<intensity>1 1 1</intensity>
+	           <translation>0.5 0.5 -0.3</translation>
+		</data>
+	</object>
+	
+	<object>
+		<name>AmbientLight</name>
+		<data type="SceneLight">
+			<intensity>0.05 0.05 0.05</intensity>
+			<isAmbient>true</isAmbient>
+		</data>
+	</object>
+</scene>
