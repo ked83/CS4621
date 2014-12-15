@@ -37,22 +37,22 @@ void main() {
 	    vec3 L = normalize(lightPosition[i] - worldPos.xyz); 
 	    
 	    
-	    if (r > 2) {
+	    if (r > 4) {
 	      highlight = highlight * 0.8;
 	      shadow = shadow * 0.8;
 	      shadow2 = shadow2 * 0.8;
 	    }
-	    if (r > 4) {
+	    if (r > 16) {
 	      highlight = highlight * 0.7;
 	      shadow = shadow * 0.7;
 	      shadow2 = shadow2 * 0.7;
 	    }
-	    if (r > 8) {
+	    if (r > 64) {
 	      highlight = highlight * 0.55;
 	      shadow = shadow * 0.55;
 	      shadow2 = shadow2 * 0.55;
 	    }
-	    if (r > 16) {
+	    if (r > 256) {
 	      highlight = highlight * 0.3;
 	      shadow = shadow * 0.3;
 	      shadow2 = shadow2 * 0.3;
