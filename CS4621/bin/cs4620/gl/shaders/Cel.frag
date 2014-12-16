@@ -1,23 +1,13 @@
 #version 120
 
-// You May Use The Following Functions As RenderMaterial Input
-// vec4 getDiffuseColor(vec2 uv)
-// vec4 getNormalColor(vec2 uv)
-// vec4 getSpecularColor(vec2 uv)
-
 // Lighting Information
 const int MAX_LIGHTS = 16;
 uniform int numLights;
 uniform vec3 lightIntensity[MAX_LIGHTS];
 uniform vec3 lightPosition[MAX_LIGHTS];
-uniform vec3 ambientLightIntensity;
 
 // Camera Information
 uniform vec3 worldCam;
-uniform float exposure;
-
-// Shading Information
-uniform float shininess;
 
 varying vec2 fUV;
 varying vec3 fN; // normal at the vertex
@@ -29,8 +19,10 @@ void main() {
 	//view direction normal
 	vec3 V = normalize(worldCam - worldPos.xyz);
 	
-	vec4 finalColor = clamp(getDiffuseColor(fUV), 0.0, 1.0);
-	vec4 shadow = vec4(0.2, 0.2, 0.2, 0.2);
+	vec4 finalColor = vec4(0.0, 0.0, 0.0, 0.0);
+	float highlight = 1.0;
+	float shadow = 0.9;
+	float shadow2 = 0.7;
 	
 	float view = dot(N, V);
 	
@@ -43,24 +35,48 @@ void main() {
 	    float r = length(lightPosition[i] - worldPos.xyz);
 	    //normal from point to light
 	    vec3 L = normalize(lightPosition[i] - worldPos.xyz); 
+	    
+	    
+	    if (r > 4) {
+	      highlight = highlight * 0.8;
+	      shadow = shadow * 0.8;
+	      shadow2 = shadow2 * 0.8;
+	    }
+	    if (r > 16) {
+	      highlight = highlight * 0.7;
+	      shadow = shadow * 0.7;
+	      shadow2 = shadow2 * 0.7;
+	    }
+	    if (r > 64) {
+	      highlight = highlight * 0.55;
+	      shadow = shadow * 0.55;
+	      shadow2 = shadow2 * 0.55;
+	    }
+	    if (r > 256) {
+	      highlight = highlight * 0.3;
+	      shadow = shadow * 0.3;
+	      shadow2 = shadow2 * 0.3;
+	    }
   
-	    // calculate diffuse term
-	    vec4 Idiff = getDiffuseColor(fUV) * max(dot(N, L), 0.0);
-	    Idiff = clamp(Idiff, 0.0, 1.0);
-	  
-	    // calculate ambient term
-	    vec4 Iamb = getDiffuseColor(fUV);
-	    Iamb = clamp(Iamb, 0.0, 1.0);
+	    // get diffuse color
+	    vec4 diff = getDiffuseColor(fUV);
+	    diff = clamp(diff, 0.0, 1.0);
 	  
 	    float intensity = dot(N, L);
+	    
+	    finalColor += clamp(vec4(lightIntensity[i], 0.0) * (diff), 0.0, 1.0);
 	  
+	    if (intensity > 0.9) {
+	      finalColor = finalColor * highlight;
+	    }
 	    if (intensity < 0.9) {
-	      finalColor -= (shadow);
+	      finalColor = finalColor * shadow;
 	    }
 	  
 	    if (intensity < 0) {
-	      finalColor -= (shadow);
+	      finalColor = finalColor * shadow2;
 	    }
+	    
 	  }
 	}
 

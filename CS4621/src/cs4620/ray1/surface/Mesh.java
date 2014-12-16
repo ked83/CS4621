@@ -43,6 +43,7 @@ public class Mesh extends Surface {
 	 * @param fileName the name of a .obj file on disk.
 	 */
 	public void setData(String fileName) {
+		System.out.println(fileName);
 		System.out.println("Loading " + RayTracer.sceneWorkspace.resolve(fileName));
 		mesh = (OBJParser.parse(RayTracer.sceneWorkspace.resolve(fileName))).flatten();
 	}

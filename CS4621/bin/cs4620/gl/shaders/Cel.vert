@@ -1,8 +1,5 @@
 #version 120
 
-// Note: We multiply a vector with a matrix from the left side (M * v)!
-// mProj * mView * mWorld * pos
-
 // RenderCamera Input
 uniform mat4 mViewProjection;
 

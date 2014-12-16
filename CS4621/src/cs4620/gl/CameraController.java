@@ -147,7 +147,7 @@ public void update(double et) {
 
 	RenderObject parent = rEnv.findObject(scene.objects.get(camera.sceneObject.parent));
 	Matrix4 pMat = parent == null ? new Matrix4() : parent.mWorldTransform;
-	pickUpObject(pMat, camera.sceneObject.transformation);
+	//pickUpObject(pMat, camera.sceneObject.transformation);
 	if(motion.lenSq() > 0.01) {
 		motion.normalize();
 		motion.mul(5 * (float)et);
@@ -193,10 +193,6 @@ protected void rotate(Matrix4 parentWorld, Matrix4 transformation, Vector3 rotat
 		mRot.mulAfter(Matrix4.createTranslation(rotCenter));
 	}
 	transformation.mulBefore(mRot);
-	//FOR TORCH
-	if (camera.sceneCamera.torch != null) {
-		camera.sceneCamera.torch.transformation.mulBefore(mRot);
-	}
 
 	System.out.println(rotation.x);
 	// SOLUTION END
@@ -216,10 +212,6 @@ protected void translate(Matrix4 parentWorld, Matrix4 transformation, Vector3 mo
 	Matrix4 mTrans = Matrix4.createTranslation(motion);
 
 	transformation.mulBefore(mTrans);
-	//FOR TORCH
-	if (camera.sceneCamera.torch != null) {
-		camera.sceneCamera.torch.transformation.mulBefore(mTrans);
-	}
 
 	// SOLUTION END
 }
